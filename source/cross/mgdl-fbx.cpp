@@ -306,9 +306,6 @@ Mesh* FBX_LoadMeshTrianglesOnly(ufbx_mesh* fbxMesh)
 	{
 		Log_Warning("Mesh does not have UVs");
 	}
-	ufbx_vec2 zeroUV;
-	zeroUV.x = 0.0f;
-	zeroUV.y = 0.0f;
 	Mesh* mesh = m_FBX_AllocateMesh(fbxMesh);
 	sizetype indexIndex = 0;
 	for(ufbx_face face : fbxMesh->faces)
@@ -330,10 +327,6 @@ Mesh* FBX_LoadMeshTrianglesOnly(ufbx_mesh* fbxMesh)
 			{
 				ufbx_vec2 uv = ufbx_get_vertex_vec2(&fbxMesh->vertex_uv, index);
 				PushUV(mesh, indexIndex, uv);
-			}
-			else
-			{
-				//PushUV(mesh, indexIndex, zeroUV);
 			}
 			indexIndex++;
 		}

@@ -296,14 +296,14 @@ void Platform_ResizeWindow(int newWidth, int newHeight)
 {
 
 	int left = 0;
-	int top = newHeight;
+	int bottom = 0;
 	int scaledWidth = newWidth;
 	int scaledHeight = newHeight;
 
     // But keep showing the internal resolution scaled
-    glViewport(left, top, scaledWidth, scaledHeight);
+    glViewport(left, bottom, scaledWidth, scaledHeight);
     platformWii.viewport.left = left;
-    platformWii.viewport.top = top;
+    platformWii.viewport.bottom = 0.0f;
     platformWii.viewport.width = scaledWidth;
     platformWii.viewport.height = scaledHeight;
 
