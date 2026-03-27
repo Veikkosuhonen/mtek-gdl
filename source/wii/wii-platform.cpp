@@ -242,7 +242,7 @@ void Platform_ReadControllers()
 		WiiController_StartFrame(controller);
 
 		WPADData *data1 = WPAD_Data(controller->m_channel);
-		controller->m_isConnected = (data1->err == WPAD_ERR_NONE);
+		controller->m_isConnected = data1->data_present && (data1->err == WPAD_ERR_NONE);
 
 		// Read data anyway even when not connected
 
