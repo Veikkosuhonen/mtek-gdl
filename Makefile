@@ -43,16 +43,16 @@ CXXFLAGS	+= -DUFBX_REAL_IS_FLOAT
 
 # Vector library
 CXXFLAGS	+= -DMGDL_USE_CCVECTOR
+# Install the library alongside DEVKITPRO, not to same folder
+INSTALL_DIR	= $(DEVKITPRO)/../lib$(LIB)
 
 # Add own include files so that #include <...> works
-MGDL_INCLUDE = -Iinclude/
+MGDL_INCLUDE = -Iinclude -I$(INSTALL_DIR)/include
 CXXFLAGS += $(MGDL_INCLUDE)
 # NOTE: The order matters. Add OGC last so that includes are
 # searched first from local include/
 CXXFLAGS += $(OGC_INCLUDE)
 
-# Install the library alongside DEVKITPRO, not to same folder
-INSTALL_DIR	= $(DEVKITPRO)/../lib$(LIB)
 # Targets
 
 .PHONY: all clean install

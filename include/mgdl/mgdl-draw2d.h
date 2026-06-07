@@ -27,6 +27,7 @@ extern "C"
  * @return Created rectangle
  */
 Rect Rect_Create(short x, short y, short w, short h);
+RectF RectF_Create(float x, float y, float w, float h);
 
 /**
  * @brief Creates a rectangle struct
