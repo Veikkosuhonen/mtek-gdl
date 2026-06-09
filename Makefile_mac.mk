@@ -43,7 +43,7 @@ install: $(ARC)
 	@mkdir -p $(INSTALL_DIR)/include/$(LIB)/pc
 
 	@cp $(LIBDIR)/$(ARC) $(INSTALL_DIR)/lib
-# @cp $(LIBDIR)/$(DLL) $(INSTALL_DIR)/lib
+	@cp $(LIBDIR)/$(DLL) $(INSTALL_DIR)/lib
 
 	@cp $(LIBHDR) $(INSTALL_DIR)/include
 	@cp $(HDRS_X) $(INSTALL_DIR)/include/$(LIB)
