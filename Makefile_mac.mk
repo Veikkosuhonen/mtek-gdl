@@ -43,14 +43,14 @@ install: $(ARC)
 	@mkdir -p $(INSTALL_DIR)/include/$(LIB)/pc
 
 	@cp $(LIBDIR)/$(ARC) $(INSTALL_DIR)/lib
-	@cp $(LIBDIR)/$(DLL) $(INSTALL_DIR)/lib
+# @cp $(LIBDIR)/$(DLL) $(INSTALL_DIR)/lib
 
 	@cp $(LIBHDR) $(INSTALL_DIR)/include
 	@cp $(HDRS_X) $(INSTALL_DIR)/include/$(LIB)
 	@cp $(HDRS_PC) $(INSTALL_DIR)/include/$(LIB)/pc
 
 # UFBX library
-	@mkdir -p $(INSTALL_DIR)/include/$(LIB)/fbx
+	@mkdir -p $(INSTALL_DIR)/include/$(LIB)/ufbx
 	@cp $(UFBX_HDR) $(INSTALL_DIR)/include/$(LIB)/ufbx
 # ccVector library
 	@mkdir -p $(INSTALL_DIR)/include/$(LIB)/ccVector
